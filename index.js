@@ -45,7 +45,10 @@ require('./src/router/gallery')(app);
 
 // gets the static files from the build folder
 app.get('*', (req, res) => {
-  res.sendFile(path.join(buildPath, 'index.html'))
+  // res.sendFile(path.join(buildPath, 'index.html'))
+  res.send({
+    message:'welcone'
+  })
 })
 
 
