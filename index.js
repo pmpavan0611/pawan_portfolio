@@ -8,7 +8,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 
 
-const { PORT } = require('./app/config/config');
+const { PORT } = require('./src/config/config');
 
 
 const buildPath = path.join(__dirname, './client/build')
@@ -27,20 +27,20 @@ app.use(cors({
 
 app.use(bodyParser.json())
 
-const { authJWT } = require('./app/middleware/auth');
-const { handleError } = require('./app/utils/helper');
+const { authJWT } = require('./src/middleware/auth');
+const { handleError } = require('./src/utils/helper');
 // app.use(authJWT);
 
 
-require('./app/router/user')(app);
-require('./app/router/auth')(app);
-require('./app/router/media')(app);
-require('./app/router/project')(app);
-require('./app/router/experience')(app);
+require('./src/router/user')(app);
+require('./src/router/auth')(app);
+require('./src/router/media')(app);
+require('./src/router/project')(app);
+require('./src/router/experience')(app);
 
-require('./app/router/skill')(app);
-require('./app/router/blog')(app);
-require('./app/router/gallery')(app);
+require('./src/router/skill')(app);
+require('./src/router/blog')(app);
+require('./src/router/gallery')(app);
 
 
 // gets the static files from the build folder
