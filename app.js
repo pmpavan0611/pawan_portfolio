@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express();
+const path = require('path');
 
 require('dotenv').config();
 
@@ -10,6 +11,9 @@ const bodyParser = require('body-parser');
 const { PORT } = require('./app/config/config');
 
 
+const buildPath = path.join(__dirname, './client/build')
+
+app.use(express.static(buildPath))
 
 app.use(cors({
     origin: ['http://localhost:3000', 'http://192.168.0.23:3000'],
@@ -18,7 +22,6 @@ app.use(cors({
     preflightContinue: false,
     optionsSuccessStatus:204
   }));
-  
 
 
 
@@ -40,7 +43,10 @@ require('./app/router/blog')(app);
 require('./app/router/gallery')(app);
 
 
-app.get('*', (req, res) => handleError('Hunnn smart!', 400, res,));
+// gets the static files from the build folder
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'))
+})
 
 
 
