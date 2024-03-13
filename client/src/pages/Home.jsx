@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Avatar from "react-avatar";
 import { TypeAnimation } from "react-type-animation";
 import About from "./About";
@@ -12,7 +12,6 @@ import Project from "./Project";
 import AppHeader from "../components/AppHeader";
 
 const Home = () => {
-
   const {
     userData: { data },
   } = useSelector((state) => state.user);
@@ -21,7 +20,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(userAbout(""));
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -53,12 +52,12 @@ const Home = () => {
 
                     <ul className="d-flex ">
                       <li className="workBtn">
-                        <a src="/" className="text-decoration-none text-light">
+                        <a href="/" className="text-decoration-none text-light">
                           View my Works
                         </a>
                       </li>
                       <li className="workBtn">
-                        <a src="/" className="text-decoration-none text-light">
+                        <a href="/" className="text-decoration-none text-light">
                           Contact Me
                         </a>
                       </li>
@@ -82,7 +81,7 @@ const Home = () => {
       </div>
       <About />
       <Service />
-      <Project/>
+      <Project />
       <Resume />
       <Skill />
       <ContactUS />

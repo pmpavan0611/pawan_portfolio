@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AppHeader = () => {
   const [navSize, setnavSize] = useState("5rem");
@@ -26,7 +27,7 @@ const AppHeader = () => {
         }}
       >
         <div className="container">
-          <a className="navbar-brand fw-bold" href="#">
+          <a className="navbar-brand fw-bold" href="/home">
             Coding Yaar
           </a>
           <button
@@ -43,40 +44,44 @@ const AppHeader = () => {
           <div className="collapse navbar-collapse" id="navbarNav5">
             <ul className="navbar-nav text-center">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/home"
+                >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/aboutUS">
                   About Me
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/">
                   What I Do?
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Resume</a>
+                <span className="nav-link">Resume</span>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Portfolio</a>
-              </li>
-
-              <li className="nav-item">
-                <a className="nav-link">Client Speak</a>
+                <span className="nav-link">Portfolio</span>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <span className="nav-link">Client Speak</span>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link" to="/">
                   Contact Me
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/login">
+                <Link className="nav-link" to="/login">
                   Login
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

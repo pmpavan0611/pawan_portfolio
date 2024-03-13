@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import instance from '../axios/axios'
 
 const initialState = {
+  loading: false,
   userlistData: {},
   userData: {}
 }
@@ -16,7 +17,7 @@ export const createUser = createAsyncThunk('user/create', async (params, { rejec
 
 
 
-export const userAbout = createAsyncThunk('/users', async ({ rejectWithValue }) => {
+export const userAbout = createAsyncThunk('/users', async (params, { rejectWithValue }) => {
   try {
     return await instance.get(`/users`,)
   } catch (error) {
@@ -24,6 +25,14 @@ export const userAbout = createAsyncThunk('/users', async ({ rejectWithValue }) 
   }
 })
 
+
+export const updateProfile = createAsyncThunk('/users/profile', async (data, { rejectWithValue }) => {
+  try {
+    return await instance.patch('/users/profile', data, { withCredentials: true })
+  } catch (error) {
+    return rejectWithValue(error.responce)
+  }
+})
 
 
 
@@ -64,6 +73,21 @@ const userSlice = createSlice({
         state.userData = action.payload;
       })
       .addCase(userAbout.rejected, (state) => {
+        state.loading = false;
+        state.userData = {};
+      })
+
+      // Update profile function
+
+      .addCase(updateProfile.pending, (state) => {
+        state.loading = true;
+        state.userlistData = {};
+      })
+      .addCase(updateProfile.fulfilled, (state, action) => {
+        state.loading = false;
+        state.userData = action.payload;
+      })
+      .addCase(updateProfile.rejected, (state) => {
         state.loading = false;
         state.userData = {};
       });

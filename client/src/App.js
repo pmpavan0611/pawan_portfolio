@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const { isUserLoggedIn } = useSelector((state) => state.auth)
+
   return (
     <BrowserRouter>
       <Suspense>
@@ -20,11 +21,11 @@ function App() {
             <Route index element={<Navigate to={`/app/admindashboard`} />} />
             {PrivateRoutes.map((route, i) => {
               return (
-                <Route
-                  key={i}
-                  path={route.path}
-                  element={<route.component />}
-                />
+                  <Route
+                    key={i}
+                    path={route.path}
+                    element={<route.component />}
+                  />
               )
             })}
             <Route path="/app/*" element={<Navigate to={`/login`} />} />

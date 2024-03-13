@@ -12,7 +12,6 @@ const Project = () => {
     dispatch(projectList(""));
   }, [dispatch]);
 
-  console.log("data>>>>Products>>>", data && data);
 
   return (
     <div className="container">

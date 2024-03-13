@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { userAbout } from "../redux/slice/userSlice";
 
 const About = () => {
 
-    const [user, setUser] = useState([]);
 
     const {
         userData: { data },
@@ -14,7 +13,7 @@ const About = () => {
 
     useEffect(() => {
         dispatch(userAbout(""));
-    }, []);
+    }, [dispatch]);
 
     return (
         <>

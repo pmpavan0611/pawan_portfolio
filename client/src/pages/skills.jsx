@@ -11,7 +11,7 @@ const Skill = () => {
 
   useEffect(() => {
     dispatch(skillsList(""));
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

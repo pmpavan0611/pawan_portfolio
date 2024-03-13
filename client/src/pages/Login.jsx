@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch,  } from "react-redux";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { login } from "../redux/slice/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [show, setShow] = useState(false);
+  const [show, ] = useState(false);
 
   const dispatch = useDispatch();
 
-  const { loading } = useSelector((state) => state.auth);
+  // const { loading } = useSelector((state) => state.auth);
 
   const navigate = useNavigate();
 
@@ -36,18 +36,17 @@ const Login = () => {
         navigate('/app/admindashboard');
       } catch (error) {
         console.error("Login failed:", error);
-        // Handle login failure, maybe show an error message
       }
     },
   });
 
   return (
-    <>
+    <div className="login">
       <div className="container">
-        <div className="row justify-content-center mt-5">
+        <div className="row justify-content-center p-4">
           <div className="col-lg-4 col-md-6 col-sm-6">
-            <div className="card shadow">
-              <div className="card-title text-center border-bottom">
+            <div className="card shadow mt-4">
+              <div className="card-title text-center border-bottom" >
                 <h2 className="p-3">Login</h2>
               </div>
               <div className="card-body">
@@ -97,7 +96,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

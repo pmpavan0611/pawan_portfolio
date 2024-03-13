@@ -27,7 +27,7 @@ const Resume = () => {
           <div className="row" >
             <div className="col-6">
               <span className="fw-bolder">My Education</span>
-              <hr class="bg-danger border-2 border-top border-danger" />
+              <hr className="bg-danger border-2 border-top border-danger" />
               {data &&
                 data.map((item, i) => {
                   return (
@@ -42,7 +42,7 @@ const Resume = () => {
 
             <div className="col-6  ">
               <span className="fw-bolder">My Experience</span>
-              <hr class="bg-danger border-2 border-top border-danger" />
+              <hr className="bg-danger border-2 border-top border-danger" />
               {data &&
                 data.map((item, i) => {
                   return (

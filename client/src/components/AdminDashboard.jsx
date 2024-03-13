@@ -124,7 +124,7 @@ const AdminDashboard = () => {
                       <div className="dropdown no-arrow">
                         <a
                           className="dropdown-toggle"
-                          href="#"
+                          href="/"
                           role="button"
                           id="dropdownMenuLink"
                           data-toggle="dropdown"
@@ -140,14 +140,14 @@ const AdminDashboard = () => {
                           <div className="dropdown-header">
                             Dropdown Header:
                           </div>
-                          <a className="dropdown-item" href="#">
+                          <a className="dropdown-item" href="/">
                             Action
                           </a>
-                          <a className="dropdown-item" href="#">
+                          <a className="dropdown-item" href="/">
                             Another action
                           </a>
                           <div className="dropdown-divider" />
-                          <a className="dropdown-item" href="#">
+                          <a className="dropdown-item" href="/">
                             Something else here
                           </a>
                         </div>
@@ -172,7 +172,7 @@ const AdminDashboard = () => {
                       <div className="dropdown no-arrow">
                         <a
                           className="dropdown-toggle"
-                          href="#"
+                          href="/"
                           role="button"
                           id="dropdownMenuLink"
                           data-toggle="dropdown"
@@ -188,14 +188,14 @@ const AdminDashboard = () => {
                           <div className="dropdown-header">
                             Dropdown Header:
                           </div>
-                          <a className="dropdown-item" href="#">
+                          <a className="dropdown-item" href="/">
                             Action
                           </a>
-                          <a className="dropdown-item" href="#">
+                          <a className="dropdown-item" href="/">
                             Another action
                           </a>
                           <div className="dropdown-divider" />
-                          <a className="dropdown-item" href="#">
+                          <a className="dropdown-item" href="/">
                             Something else here
                           </a>
                         </div>

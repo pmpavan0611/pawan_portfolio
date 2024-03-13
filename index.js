@@ -15,21 +15,19 @@ const buildPath = path.join(__dirname, './client/build')
 
 app.use(express.static(buildPath))
 
+
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 app.use(cors({
     origin: ['http://localhost:3000', 'http://192.168.0.23:3000'],
     credentials: true,
-    methods: ['POST', 'PUT', 'GET', 'DELETE'],
+    methods: ['POST', 'PUT','PATCH', 'GET', 'DELETE'],
     preflightContinue: false,
     optionsSuccessStatus:204
   }));
 
-
-
-app.use(bodyParser.json())
-
-const { authJWT } = require('./src/middleware/auth');
-const { handleError } = require('./src/utils/helper');
-// app.use(authJWT);
 
 
 require('./src/router/user')(app);

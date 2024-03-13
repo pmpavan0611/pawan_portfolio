@@ -1,6 +1,9 @@
 import React from "react";
 
 const ProjectPage = () => {
+
+
+  
   return (
     <div className="container py-5">
       <form className="skill-form">
@@ -45,13 +48,7 @@ const ProjectPage = () => {
           <input type="text" className="form-control" placeholder="Live URL" />
           <label htmlFor="floatingPassword">Live URL</label>
         </div>
-        <a href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </a>
+        <button type="btn">Submit</button>
       </form>
     </div>
   );

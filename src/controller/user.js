@@ -87,21 +87,11 @@ exports.findOne = async (req, res) => {
 exports.updateProfile = async (req, res) => {
   try {
     const { full_name, title, mobile, email, password, aboutUs } = req.body;
-
-    const { error } = updateUserProfile.validate(req.body, {
-      abortEarly: false,
-    });
-
-    if (error) {
-      handleError(error, 400, res);
-      return;
-    }
-
     const file = `/media/${req?.file?.filename}`;
 
     const data = { full_name, title, aboutUs, mobile, email, password, profile: file, };
-
-    await User.updateOne({ _id: '65defa5e5e3552c0daa6a181' }, data, { new: true });
+    console.log('data>>>>>>>>>', data);
+    await User.findOneAndUpdate({ _id: req.user._id }, data, { new: true })
 
     handleResponse(res, [], "Profile updated here.", 202);
 
