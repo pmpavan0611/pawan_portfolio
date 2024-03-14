@@ -5,8 +5,8 @@ import AppSidebar from "../pages/AppSidebar";
 
 const PrivateLayout = () => {
   return (
-    <>
-      <Row style={{ marginRight: 0 }}>
+    <div className="private-layout">
+      <Row>
         <Col xs={2}>
           <AppSidebar />
         </Col>
@@ -14,7 +14,8 @@ const PrivateLayout = () => {
           <Outlet />
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
+
 export default PrivateLayout;

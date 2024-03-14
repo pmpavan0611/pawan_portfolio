@@ -11,7 +11,7 @@ import projectSlice from './slice/projectSlice.js';
 
 export const store = configureStore({
   reducer: {
-    product: projectSlice,
+    project: projectSlice,
     auth: authSlice,
     user: userSlice,
     experience: resumeSlice,
